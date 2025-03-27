@@ -19,7 +19,7 @@ const MenuManager = () => {
 
     const fetchMenus = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/menus');
+            const response = await axios.get('https://deepnet-soft-task-server.onrender.com/api/menus');
             setMenus(response.data);
         } catch (error) {
             console.error('Error fetching menus:', error);
@@ -29,7 +29,7 @@ const MenuManager = () => {
     const handleCreateMenu = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/menus', newMenu);
+            await axios.post('https://deepnet-soft-task-server.onrender.com/api/menus', newMenu);
             setNewMenu({ name: '', description: '' });
             setIsAddingMenu(false);
             fetchMenus();
@@ -41,7 +41,7 @@ const MenuManager = () => {
     const handleCreateItem = async (e) => {
         e.preventDefault();
         try {
-            await axios.post(`http://localhost:5000/api/menus/${selectedMenu._id}/items`, newItem);
+            await axios.post(`https://deepnet-soft-task-server.onrender.com/api/menus/${selectedMenu._id}/items`, newItem);
             setNewItem({ name: '', description: '', price: '' });
             setIsAddingItem(false);
             fetchMenus();
@@ -58,7 +58,7 @@ const MenuManager = () => {
     const handleDeleteMenu = async (menuId) => {
         if (window.confirm('Are you sure you want to delete this menu?')) {
             try {
-                await axios.delete(`http://localhost:5000/api/menus/${menuId}`);
+                await axios.delete(`https://deepnet-soft-task-server.onrender.com/api/menus/${menuId}`);
                 fetchMenus();
                 setSelectedMenu(null);
             } catch (error) {
@@ -70,7 +70,7 @@ const MenuManager = () => {
     const handleEditMenu = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5000/api/menus/${editingMenu._id}`, {
+            await axios.put(`https://deepnet-soft-task-server.onrender.com/api/menus/${editingMenu._id}`, {
                 name: editingMenu.name,
                 description: editingMenu.description
             });
