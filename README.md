@@ -1,4 +1,4 @@
-# DeepNet Restaurant Frontend
+# DeepNetSoft Restaurant Frontend
 
 Modern React.js frontend for the DeepNet Restaurant management system.
 
