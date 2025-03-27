@@ -116,6 +116,25 @@
     margin-right: 30px;
 }
 
+.navbar_container .navbar_content .content_div .add-button {
+    font-family: 'Kelly Slab', cursive;
+    height: 24px;
+    color: #F5F5F5;
+    cursor: pointer;
+    padding: 0 15px;
+    transition: color 0.3s;
+}
+
+.navbar_container .navbar_content .content_div .add-button:hover {
+    color: #0796EF;
+}
+
+/* Active states */
+.navbar_container .navbar_content .content_div .active,
+.sidebar-content a.active {
+    color: #0796EF;
+}
+
 /* Hamburger Menu */
 .hamburger {
     display: none;

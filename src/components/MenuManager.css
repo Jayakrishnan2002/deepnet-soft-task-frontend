@@ -191,4 +191,42 @@
     .items-list {
         grid-template-columns: 1fr;
     }
-} 
+}
+
+.menu-item-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.menu-item-wrapper .menu-item {
+    flex: 1;
+    padding: 10px;
+}
+
+.menu-actions {
+    display: flex;
+    gap: 5px;
+    padding-right: 10px;
+}
+
+.menu-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.menu-actions button:first-child {
+    background-color: #2196F3;
+    color: white;
+}
+
+.menu-actions button:last-child {
+    background-color: #f44336;
+    color: white;
+}

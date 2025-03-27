@@ -9,6 +9,9 @@ const MenuManager = () => {
     const [newItem, setNewItem] = useState({ name: '', description: '', price: '' });
     const [isAddingMenu, setIsAddingMenu] = useState(false);
     const [isAddingItem, setIsAddingItem] = useState(false);
+    const [isEditing, setIsEditing] = useState(false);
+    const [editingMenu, setEditingMenu] = useState(null);
+    const [editingItem, setEditingItem] = useState(null);
 
     useEffect(() => {
         fetchMenus();
@@ -52,6 +55,38 @@ const MenuManager = () => {
         setIsAddingItem(false);
     };
 
+    const handleDeleteMenu = async (menuId) => {
+        if (window.confirm('Are you sure you want to delete this menu?')) {
+            try {
+                await axios.delete(`http://localhost:5000/api/menus/${menuId}`);
+                fetchMenus();
+                setSelectedMenu(null);
+            } catch (error) {
+                console.error('Error deleting menu:', error);
+            }
+        }
+    };
+
+    const handleEditMenu = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.put(`http://localhost:5000/api/menus/${editingMenu._id}`, {
+                name: editingMenu.name,
+                description: editingMenu.description
+            });
+            setIsEditing(false);
+            setEditingMenu(null);
+            fetchMenus();
+        } catch (error) {
+            console.error('Error updating menu:', error);
+        }
+    };
+
+    const startEditing = (menu) => {
+        setIsEditing(true);
+        setEditingMenu({ ...menu });
+    };
+
     return (
         <div className="menu-manager">
             <div className="menu-sidebar">
@@ -64,12 +99,17 @@ const MenuManager = () => {
                 </button>
                 <div className="menu-list">
                     {menus.map(menu => (
-                        <div 
-                            key={menu._id}
-                            className={`menu-item ${selectedMenu?._id === menu._id ? 'selected' : ''}`}
-                            onClick={() => handleMenuClick(menu)}
-                        >
-                            {menu.name}
+                        <div key={menu._id} className="menu-item-wrapper">
+                            <div 
+                                className={`menu-item ${selectedMenu?._id === menu._id ? 'selected' : ''}`}
+                                onClick={() => handleMenuClick(menu)}
+                            >
+                                {menu.name}
+                            </div>
+                            <div className="menu-actions">
+                                <button onClick={() => startEditing(menu)}>Edit</button>
+                                <button onClick={() => handleDeleteMenu(menu._id)}>Delete</button>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -92,6 +132,21 @@ const MenuManager = () => {
                         />
                         <button type="submit">Create Menu</button>
                         <button type="button" onClick={() => setIsAddingMenu(false)}>Cancel</button>
+                    </form>
+                ) : isEditing ? (
+                    <form onSubmit={handleEditMenu} className="menu-form">
+                        <h3>Edit Menu</h3>
+                        <input
+                            type="text"
+                            value={editingMenu.name}
+                            onChange={(e) => setEditingMenu({ ...editingMenu, name: e.target.value })}
+                        />
+                        <textarea
+                            value={editingMenu.description}
+                            onChange={(e) => setEditingMenu({ ...editingMenu, description: e.target.value })}
+                        />
+                        <button type="submit">Save Changes</button>
+                        <button type="button" onClick={() => setIsEditing(false)}>Cancel</button>
                     </form>
                 ) : selectedMenu ? (
                     <div className="selected-menu">
