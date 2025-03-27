@@ -1,0 +1,60 @@
+.menu_container {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.menu_container .menu_img {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.menu_container .menu_img .m1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 72px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 3%;
+    text-shadow: 4px 3px 0 #800020;
+}
+
+.menu_container .menu_img .m2 {
+    font-family: 'Kelly Slab', cursive;
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #bbbbbb;
+    padding: 0 20px;
+}
+
+/* Mobile View - Media Query */
+@media (max-width: 768px) {
+    /* Adjust Menu Image Section */
+    .menu_container {
+        height: 300px;
+    }
+    .menu_container .menu_img {
+        height: 300px;
+    }
+
+    /* Adjust Heading (MENU) */
+    .menu_container .menu_img .m1 {
+        font-size: 48px;
+        text-shadow: 3px 2px 0 #800020;
+    }
+
+    /* Adjust Paragraph Text */
+    .menu_container .menu_img .m2 {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+}

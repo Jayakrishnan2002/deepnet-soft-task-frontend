@@ -1,0 +1,157 @@
+.contact_container{
+    width: 100%;
+    height: 250px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact_container .box{
+    width: 374px;
+    height: 134px;
+    border: 1px solid #FFFFFF;
+    border-radius: 15px;
+    margin-left: 12px;
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.contact_container .box .s1{
+    font-family: 'Oswald', sans-serif;
+    color: #0796EF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 3%;
+    margin-bottom: 15px;
+}
+.contact_container .box .s2{
+    font-family: 'Oswald', sans-serif;
+    color: #857878;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 3%;
+}
+.contact_container .box .s2 span{
+    margin-right: 10px;
+}
+.contact_container .box .s2 span img{
+    margin-top: 7px;
+}
+.contact_container .box .span_div{
+    margin-top: 60px;
+}
+.contact_container .box .span1{
+    color: #0796EF;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
+    line-height: 100%;
+    letter-spacing: 3%;
+}
+.contact_container .box .span2{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
+    line-height: 100%;
+    letter-spacing: 3%;
+    margin-left: 6px;
+}
+.contact_container .box .span3{
+    color: #857878;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
+    line-height: 100%;
+    letter-spacing: 3%;
+    margin-left: 6px;
+}
+.contact_container .box .social_icon{
+    width: 86px;
+    height: 12.6px;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact_container .box .icon{
+    position: absolute;
+    width: 86px;
+    height: 76px;
+    top: -29%;
+}
+.contact_container .box .icon img{
+    width: 86px;
+    height: 76px;
+}
+.contact_container .box .span_location{
+    color: #857878;
+}
+.contact_container .box .span_location .spantext{
+    margin-left: 36px;
+}
+.contact_container .box .span_location span{
+    margin-right: 20px;
+}
+
+/* Mobile View - Media Query */
+@media (max-width: 768px) {
+    /* Stack boxes vertically */
+    .contact_container {
+        height: 582px;
+        flex-direction: column; /* Stack boxes vertically */
+        align-items: center; /* Center align the boxes */
+    }
+
+    /* Ensure boxes take full width on mobile */
+    .contact_container .box {
+        width: 90%; /* Make each box 90% of the container width */
+        height: 128px; /* Allow height to adjust */
+        margin-top: 20px; /* Add margin on top for spacing */
+    }
+
+    /* Change the order of the boxes */
+    .contact_container .box:nth-child(1) {
+        order: 2; /* Make the second box come first */
+    }
+    
+    .contact_container .box:nth-child(2) {
+        order: 1; /* Make the first box come second */
+    }
+
+    .contact_container .box:nth-child(3) {
+        order: 3; /* Make the third box come last */
+    }
+
+    /* Adjust the font sizes for mobile */
+    .contact_container .box .s1 {
+        font-size: 14px; /* Reduce size for better readability */
+    }
+
+    .contact_container .box .s2 {
+        font-size: 14px; /* Adjust for readability */
+    }
+    .social_icon{
+        margin-top: 10px;
+    }
+    .contact_container .box .span1,
+    .contact_container .box .span2,
+    .contact_container .box .span3 {
+        font-size: 25px; /* Adjust the font size for better mobile display */
+    }
+
+    .contact_container .box .social_icon img {
+        width: 18px; /* Adjust the size of social icons for mobile */
+        height: 18px;
+    }
+
+    .contact_container .box .icon img {
+        width: 70px; /* Adjust the logo size for mobile */
+        height: 60px;
+    }
+}

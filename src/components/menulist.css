@@ -1,0 +1,77 @@
+.menulist_container{
+    width: 100%;
+    height: 79px;
+    background-color: black;
+}
+.menulist_container .menulist_bg{
+    width: 100%;
+    height: 79px;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px;
+}
+.menulist_container .menulist_bg .list1,
+.menulist_container .menulist_bg .list2 {
+    min-width: 114.25px;
+    height: 49.98px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    border: 0.5px solid #0796EF;
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 3%;
+    line-height: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.menulist_container .menulist_bg .list2 {
+    background-color: #0796EF;
+    border: 0.32px solid #0796EF;
+}
+.menulist_container .menulist_bg .list3{
+    width: 114.25px;
+    height: 49.98px;
+    background-color: black;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 0.5px solid #0796EF;
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 3%;
+    line-height: 100%;
+}
+.menulist_container .menulist_bg .list1:hover {
+    background-color: rgba(7, 150, 239, 0.1);
+}
+
+/* Mobile View - Media Query */
+@media (max-width: 1268px) {
+    .menulist_container{
+        height: 60px; 
+    }
+    .menulist_container .menulist_bg {
+        height: 60px; 
+        justify-content: space-evenly; 
+        padding: 0 10px;
+    }
+
+    .menulist_container .menulist_bg .list1,
+    .menulist_container .menulist_bg .list2,
+    .menulist_container .menulist_bg .list3 {
+        min-width: 72.66px; 
+        height: 31.79px;
+        margin-left: 0;
+        margin-right: 0; 
+        font-size: 14px; 
+    }
+}

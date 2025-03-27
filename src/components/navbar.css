@@ -1,0 +1,219 @@
+.navbar_container{
+    width: 100%;
+    height: 100px;
+    /* top: -2px; */
+    background-color: #121618;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+}
+.navbar_container .navbar_logo{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* height: 100px; */
+    /* background-color: aquamarine; */
+}
+.navbar_container .navbar_logo .logo_container{
+    width: 86px;
+    height: 76px;
+    margin-left: 168px;
+    position: relative;
+    z-index: 1;
+}
+.navbar_container .navbar_logo .logo_container .logo{
+    width: 86px;
+    height: 76px;
+    position: absolute;
+    left: 90%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+    margin-top: 37px; 
+}
+.navbar_container .navbar_logo .logo_name{
+    width: 154px;
+    height: 104px;
+    /* background-color: aquamarine; */
+    margin-left: 310px;
+    color: azure; 
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navbar_container .navbar_logo .logo_name .ln1{
+    width: 154px;
+    height: 52px;
+    /* background-color: aqua; */
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    color: #0796EF;
+    font-size: 35px;
+    display: flex;
+    justify-content: flex-start;
+}
+.navbar_container .navbar_logo .logo_name .ln1 span{
+    color: white;
+    margin-left: 6px;
+}
+.navbar_container .navbar_logo .logo_name .ln2{
+    width: 154px;
+    height: 52px;
+    color: #857878;
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 0.8;
+    
+}
+
+.navbar_container .navbar_content{
+    width: 50%;
+    height: 100px;
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.navbar_container .navbar_content .content_div{
+    width: 500px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.navbar_container .navbar_content .c1,
+.navbar_container .navbar_content .c2,
+.navbar_container .navbar_content .c3,
+.navbar_container .navbar_content .c4 {
+    font-family: 'Kelly Slab', cursive;
+    height: 24px;
+    color: #F5F5F5;
+}
+.navbar_container .navbar_content .c2{
+    width: 36px;
+    height: 24px;
+    /* background-color: #07efa5; */
+    color: #0796EF;
+}
+.navbar_container .navbar_content .c3{
+    width: 180px;
+    height: 24px;
+    /* background-color: #0796EF; */
+    text-align: center;
+}
+.navbar_container .navbar_content .c4{
+    width: 100px;
+    height: 24px;
+    /* background-color: #07ef4d; */
+    margin-right: 30px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    z-index: 100;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2.2px;
+    background-color: #857878;
+    margin: 2px 0;
+    transition: 0.4s;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #121618;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+.sidebar-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-content a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Kelly Slab', cursive;
+    font-size: 18px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.sidebar-content a:hover {
+    color: #0796EF;
+}
+
+.close-btn {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+/* Update Mobile View */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar_container .navbar_content {
+        display: none;
+    }
+
+    .navbar_container .navbar_logo .logo_name {
+        display: none;
+    }
+
+    .navbar_container {
+        height: 40px;
+    }
+
+    .navbar_container .navbar_logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navbar_container .navbar_logo .logo_container {
+        width: 50px;
+        height: 44px;
+        margin-left: 0;
+    }
+
+    .navbar_container .navbar_logo .logo_container .logo {
+        width: 50px;
+        height: 44px;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
